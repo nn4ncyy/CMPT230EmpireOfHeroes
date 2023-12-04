@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,10 +15,14 @@ public class PlayerController : MonoBehaviour
 
     private bool flipped = false;
 
+    public LayerMask interactableLayer;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
+
+   
 
     private void Update()
     {
@@ -28,15 +33,20 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero)
             {
+                //animator.SetFloat("moveX", input.x);
+                //animator.SetFloat("moveY", input.y);
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
 
-                StartCoroutine(Move(targetPos));
+                if(IsWalkable(targetPos))
+                    StartCoroutine(Move(targetPos));
             }
         }
 
         animator.SetFloat("Speed", Mathf.Abs(input.magnitude * moveSpeed));
+
 
         if (input.x < 0 && !flipped)
         {
@@ -48,8 +58,25 @@ public class PlayerController : MonoBehaviour
             flip();
         }
         
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+            Interact();
 
+    }
+
+
+    void Interact()
+    {
+
+        var facingDir = new Vector3(input.x, input.y);
+        var interactPos = transform.position + facingDir;
+
+        Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
+
+        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer);
+        if(collider != null)
+        {
+            Debug.Log("there is an NPC here!");
+        }
     }
 
     void flip()
@@ -73,6 +100,15 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+    }
+
+    private bool IsWalkable(Vector3 targetPos)
+    {
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, interactableLayer) != null)
+        {
+            return false;
+        }
+        return true;
     }
 
 }
