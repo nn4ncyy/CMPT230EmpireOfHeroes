@@ -11,14 +11,7 @@ public class StateLoader : MonoBehaviour
 	// Update is called once per frame
     void Update()
 	{
-		if (Input.GetKey("right"))
-		{
-			NextState();
-		}
-		if (Input.GetKey("left"))
-		{
-			PreviousState();
-		}
+		
 	}
 
     public void NextState()
@@ -41,9 +34,9 @@ public class StateLoader : MonoBehaviour
 		SceneManager.LoadScene("MapScene");
 	}
 
-	public void SampleScene()
+	public void Lev1()
 	{
-		SceneManager.LoadScene("SampleScene");
+		SceneManager.LoadScene("Level1");
 	}
 
 	//Creating coroutine??
