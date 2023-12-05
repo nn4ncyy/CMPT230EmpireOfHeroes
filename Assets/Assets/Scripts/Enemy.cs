@@ -8,18 +8,18 @@ public class Enemy : MonoBehaviour
     public float MaxHitPoints = 5;
 
     private Animator animator;
-
-    public HealthbarBehavior Healthbar;
-
+    
 
     void Start()
     {
         health = MaxHitPoints;
+        
     }
+
+    
     public void TakeDamage(float damage)
     {
         health -= damage;
-
 
         if(health <= 0f)
         {
