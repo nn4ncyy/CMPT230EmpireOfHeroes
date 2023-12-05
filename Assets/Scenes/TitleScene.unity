@@ -200,12 +200,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5622274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 0.2, z: 0}
-  m_LocalScale: {x: 98.52508, y: 97.543945, z: 1}
+  m_LocalPosition: {x: 0.33, y: -0.67, z: 0}
+  m_LocalScale: {x: 87.04205, y: 87.898766, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1952444879}
   m_Father: {fileID: 1960212722}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &448306964 stripped
 GameObject:
@@ -418,7 +419,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1960212722}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -538,7 +539,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1960212722}
+    m_TransformParent: {fileID: 5622276}
     m_Modifications:
     - target: {fileID: 1517480635594260936, guid: bfad84313b16f6a42b8d871fdfe785ea, type: 3}
       propertyPath: m_RootOrder
@@ -546,19 +547,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1517480635594260936, guid: bfad84313b16f6a42b8d871fdfe785ea, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.2154
+      value: 1.0054857
       objectReference: {fileID: 0}
     - target: {fileID: 1517480635594260936, guid: bfad84313b16f6a42b8d871fdfe785ea, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2221
+      value: 0.9956204
       objectReference: {fileID: 0}
     - target: {fileID: 1517480635594260936, guid: bfad84313b16f6a42b8d871fdfe785ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -358.52
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 1517480635594260936, guid: bfad84313b16f6a42b8d871fdfe785ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -201.4997
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 1517480635594260936, guid: bfad84313b16f6a42b8d871fdfe785ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -715,7 +716,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1952444879}
   - {fileID: 5622276}
   - {fileID: 1391798646}
   m_Father: {fileID: 0}
