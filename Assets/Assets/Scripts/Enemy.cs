@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float MaxHitPoints = 5;
 
     private Animator animator;
+  
     
 
     void Start()
@@ -23,20 +24,27 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0f)
         {
+            
             Death();
             EnemyDeath();
+            
         }
     }
 
     public void Death()
     {
-        animator = GameObject.Find("Skeleton").GetComponent<Animator>();
+        
+        animator = GameObject.Find(gameObject.name).GetComponent<Animator>();
         animator.SetBool("isDead", true);
+        
+        
     }
 
     public void EnemyDeath()
     {
+      
         Destroy(gameObject, 1f);
-        Debug.Log("Enemy Died");
+        Debug.Log(gameObject.name + "Died");
+        
     }
 }

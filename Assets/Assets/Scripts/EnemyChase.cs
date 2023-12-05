@@ -24,6 +24,7 @@ public class EnemyChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(animator == null) { animator = GetComponentInChildren<Animator>(); }
         animator.SetFloat("Speed", speed);
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
@@ -35,9 +36,8 @@ public class EnemyChase : MonoBehaviour
         } else {
             sprite.flipX = true;
         }
-        
+        }
     }
 
-}
 
 
