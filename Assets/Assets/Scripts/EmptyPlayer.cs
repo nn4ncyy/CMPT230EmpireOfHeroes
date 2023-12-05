@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class EmptyPlayer : MonoBehaviour
 {
     public float moveSpeed;
 
@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
-    private bool flipped = false;
 
     public LayerMask interactableLayer;
 
@@ -49,18 +48,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(input.magnitude * moveSpeed));
 
 
-        if (input.x < 0 && !flipped)
-        {
-            flip();
-        }
-
-        if(input.x > 0 && flipped)
-        {
-            flip();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Z))
-            Interact();
 
     }
 
@@ -80,14 +67,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void flip()
-    {
-        Vector3 currentScale = animator.transform.localScale;
-        currentScale.x *= -1;
-        animator.transform.localScale = currentScale;
 
-        flipped = !flipped;
-    }
 
     IEnumerator Move(Vector3 targetPos)
     {
