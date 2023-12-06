@@ -6,10 +6,11 @@ public class Enemy : MonoBehaviour
 {
     public float health;
     public float MaxHitPoints = 5;
-
+    public LevelBar levelBar;
     private Animator animator;
   
     
+
 
     void Start()
     {
@@ -27,7 +28,6 @@ public class Enemy : MonoBehaviour
             
             Death();
             EnemyDeath();
-            
         }
     }
 
@@ -42,9 +42,15 @@ public class Enemy : MonoBehaviour
 
     public void EnemyDeath()
     {
-      
+        LevelManager levelManager = LevelManager.instance;
+        
+        if (levelManager != null) {
+            levelManager.AddEXP(20);
+            
+            Debug.Log(levelManager.pts);
+        }
         Destroy(gameObject, 1f);
         Debug.Log(gameObject.name + "Died");
-        
+
     }
 }

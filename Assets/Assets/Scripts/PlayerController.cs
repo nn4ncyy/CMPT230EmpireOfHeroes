@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
    
 
-    private void Update()
+    public void HandleUpdate()
     {
         if (!isMoving)
         {
@@ -112,4 +112,4 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-}
+} 
