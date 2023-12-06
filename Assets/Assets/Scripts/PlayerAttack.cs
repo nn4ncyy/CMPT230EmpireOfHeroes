@@ -12,8 +12,6 @@ public class PlayerAttack : MonoBehaviour
 
     float timeUntilMelee;
 
-    public AudioSource swordSwing;
-
     private void Awake()
     {
         anim = GameObject.Find("Sword").GetComponent<Animator>();
@@ -25,7 +23,6 @@ public class PlayerAttack : MonoBehaviour
         {
             //animator.SetTrigger("Attack");
             anim.SetTrigger("Attack");
-            swordSwing.Play();
             timeUntilMelee = meleeSpeed;
         } else {
             timeUntilMelee -= Time.deltaTime;
