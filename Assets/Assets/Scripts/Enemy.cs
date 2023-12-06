@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
     public float MaxHitPoints = 5;
 
     private Animator animator;
-    public AudioSource enemyDeathSound;
   
     
 
@@ -25,7 +24,7 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0f)
         {
-            enemyDeathSound.Play();
+            
             Death();
             EnemyDeath();
             

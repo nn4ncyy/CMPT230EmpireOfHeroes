@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask interactableLayer;
 
-    public AudioSource walkEffect;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -38,7 +36,7 @@ public class PlayerController : MonoBehaviour
             {
                 //animator.SetFloat("moveX", input.x);
                 //animator.SetFloat("moveY", input.y);
-                walkEffect.Play();
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
