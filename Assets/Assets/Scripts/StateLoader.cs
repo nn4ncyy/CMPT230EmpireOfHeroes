@@ -39,6 +39,11 @@ public class StateLoader : MonoBehaviour
 		SceneManager.LoadScene("Level1");
 	}
 
+	public void castle()
+	{
+		SceneManager.LoadScene("Castle");
+	}
+
 	//Creating coroutine??
 	//Creating coroutine??
 	IEnumerator LoadState(int sceneIndex)
