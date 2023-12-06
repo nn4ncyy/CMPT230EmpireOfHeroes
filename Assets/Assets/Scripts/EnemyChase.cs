@@ -17,7 +17,7 @@ public class EnemyChase : MonoBehaviour
    
     void Start()
     {
-        animator = GameObject.Find("Skeleton").GetComponent<Animator>();
+        animator = GameObject.Find(gameObject.name).GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         
     }
